@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEPART File Processor</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>📦 DEPART Processor</h1>
+        <p class="subtitle">Upload your DEPART CSV file to generate Wave Plans and Staging Plans</p>
+
+        <div class="upload-area" id="uploadArea">
+            <div class="upload-icon">📁</div>
+            <div class="upload-text">Drop your DEPART file here</div>
+            <div class="upload-subtext">or click to browse</div>
+            <input type="file" id="fileInput" accept=".csv">
+        </div>
+
+        <div class="file-info" id="fileInfo">
+            <div class="file-name" id="fileName"></div>
+            <div class="file-details" id="fileDetails"></div>
+        </div>
+
+        <button class="process-btn" id="processBtn">
+            🚀 Process File
+        </button>
+
+        <div class="progress-area" id="progressArea">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill">0%</div>
+            </div>
+            <div class="status-message" id="statusMessage"></div>
+        </div>
+
+        <div class="results" id="results">
+            <h2 style="margin-bottom: 20px; color: #333;">✅ Generated Files</h2>
+            <div id="resultsList"></div>
+        </div>
+
+        <div class="error-message" id="errorMessage"></div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/generators.js"></script>
+    <script src="js/notifications.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
