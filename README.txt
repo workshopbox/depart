@@ -1,81 +1,59 @@
-# DEPART File Processor
+# DEPART FIXED - What Changed
 
-## 📁 File Structure
+## ✅ Changes Made:
+
+### 1. DA ID Fix (generators.js line 137)
+- **Before:** `'DA ID': row['Route ID']` ❌ 
+- **After:** `'DA ID': row['Type']` ✅
+- Excel files now show correct Amazon DA IDs starting with 'A'
+
+### 2. Caproster Validation (NEW!)
+- Yellow validation box appears after CSV upload
+- Paste Amazon Caproster data
+- Auto-compares Start Zeit with Dispatch Time by DA ID
+- Shows differences before file generation
+- Warns you before processing if mismatches exist
+
+### 3. Smart Chime to Affected DSPs (NEW!)
+- Button appears when differences found
+- Sends Chime ONLY to DSPs with time problems
+- One message per DSP with ALL their issues
+- Message includes Route Code, DA ID, Location, times
+
+## 📁 Files:
 
 ```
 depart/
-├── index.html          # Main HTML file
+├── index.html          
 ├── css/
-│   └── style.css      # All styling
-├── js/
-│   └── app.js         # All JavaScript logic
-└── README.txt         # This file
+│   └── style.css      (+ Caproster styles)
+└── js/
+    ├── config.js       (unchanged)
+    ├── utils.js        (unchanged)
+    ├── caproster.js    (NEW!)
+    ├── generators.js   (DA ID fixed)
+    ├── notifications.js (unchanged)
+    └── app.js          (+ Caproster logic)
 ```
 
-## ✅ What Was Fixed:
+## ✅ All Original Features Work:
 
-### 1. DA ID Column
-- Changed from `row['Route ID']` to `row['Type']`
-- Excel files now show correct Amazon DA IDs starting with 'A'
-
-### 2. Caproster Validation
-- Paste Amazon Caproster data to validate times
-- Compares Start Zeit with Dispatch Time by DA ID
-- Shows differences before generating files
-
-### 3. Smart Chime Notifications
-- Button: "📢 Send Chime to Affected DSPs"
-- Only sends to DSPs with time differences
-- One message per DSP with all their issues
-- Message includes Route Code, DA ID, Location, and both times
-
-## 🚀 How to Use:
-
-1. Open `index.html` in your browser
-2. Upload DEPART CSV file
-3. (Optional) Paste Caproster data for validation
-4. If differences found, click "📢 Send Chime to Affected DSPs"
-5. Click "🚀 Process File"
-6. Download generated files
-
-## 📊 Generated Files:
-
-- Wave Plan PDF (for Yard Marshall)
-- Staging Plan PDF (overview)
-- Excel files for each DSP (NALG, AMTP, BBGH, MDTR, ABFB)
-- Full Table Excel (all DSPs combined)
-
-## ⚙️ Configuration:
-
-Chime webhooks and email addresses are in `js/app.js` (lines 5-22).
-
-To update:
-1. Open `js/app.js`
-2. Find `chimeWebhooks` and `dspEmails`
-3. Update URLs/emails as needed
-
-## ✅ Features:
-
-✅ Correct DA IDs in Excel files
-✅ Caproster time validation
-✅ Smart Chime notifications to affected DSPs only
-✅ Email drafts for all DSPs
+✅ Wave Plan PDF
+✅ Staging Plan PDF
+✅ DSP Excel files (NALG, AMTP, BBGH, MDTR, ABFB)
+✅ Full Table Excel
+✅ Email drafts
+✅ Chime notifications
 ✅ Batch operations
-✅ Wave timing calculations
-✅ Group detection (A-G)
-✅ Professional UI
+✅ All original buttons and features
 
-## 📝 Requirements:
+## 🚀 Usage:
 
-- Modern web browser
-- Internet connection (for CDN libraries)
-- DEPART CSV export file
-- (Optional) Caproster data for validation
+1. Open index.html
+2. Upload DEPART CSV
+3. (Optional) Paste Caproster data
+4. If differences: Click "📢 Send Chime to Affected DSPs"
+5. Click "🚀 Process File"
+6. Use all original features as before
 
-## 🎯 Tested:
-
-✅ DA IDs correct
-✅ Caproster validation working
-✅ Smart Chime notifications
-✅ All features working
-✅ Files separated properly
+DONE! 🎉

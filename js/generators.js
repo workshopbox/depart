@@ -174,7 +174,7 @@ function generateDSPExcelFiles(dataByDSP) {
                 'Leaving': timing.leaving,
                 'Yard Empty': timing.yardEmpty,
                 'Route Code': row['Route Code'],
-                'DA ID': row['Route ID'],
+                'DA ID': row['Type'],
                 'Location': row['Location'],
                 'Group': group
             };

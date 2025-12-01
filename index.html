@@ -30,15 +30,10 @@
         <div class="caproster-section" id="caprosterSection">
             <h2>⚠️ Caproster Validation</h2>
             <p>Paste the Amazon Caproster data below to validate Start Zeit before generating files:</p>
-            <textarea 
-                id="caprosterInput" 
-                class="caproster-textarea" 
-                placeholder="Paste Caproster data here (tab-separated, DA ID in first column)...
+            <textarea id="caprosterInput" class="caproster-textarea" placeholder="Paste Caproster data here (tab-separated, DA ID in first column)...
 Example:
 A3PHY1U4CQJ7F	Moanga Maria Nicoleta	Nicht angekommen	Standard Parcel	8 Stunden	8:40 am	4:40 pm	-	NA Logistik GmbH"></textarea>
-            <div class="caproster-hint">
-                💡 This will compare the Start Zeit (column 6) from Caproster with Dispatch Time from DEPART CSV using DA ID matching
-            </div>
+            <div class="caproster-hint">💡 This will compare the Start Zeit (column 6) from Caproster with Dispatch Time from DEPART CSV using DA ID matching</div>
             <div class="validation-results" id="validationResults"></div>
         </div>
 
@@ -61,6 +56,11 @@ A3PHY1U4CQJ7F	Moanga Maria Nicoleta	Nicht angekommen	Standard Parcel	8 Stunden	8
         <div class="error-message" id="errorMessage"></div>
     </div>
 
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/caproster.js"></script>
+    <script src="js/generators.js"></script>
+    <script src="js/notifications.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>
